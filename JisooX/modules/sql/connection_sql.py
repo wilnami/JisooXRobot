@@ -22,7 +22,7 @@ class ChatAccessConnectionSettings(BASE):
 
 class Connection(BASE):
     __tablename__ = "connection"
-    user_id = Column(Integer, primary_key=True)
+    user_id = Column(BigInteger, primary_key=True)
     chat_id = Column(String(14))
     def __init__(self, user_id, chat_id):
         self.user_id = user_id
