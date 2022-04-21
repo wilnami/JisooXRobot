@@ -2,7 +2,7 @@ import threading
 import time
 from typing import Union
 
-from sqlalchemy import Column, String, Boolean, UnicodeText, Integer, func, distinct
+from sqlalchemy import Column, String, Boolean, UnicodeText, BigInteger, func, distinct
 
 from JisooX.modules.helper_funcs.msg_types import Types
 from JisooX.modules.sql import SESSION, BASE
