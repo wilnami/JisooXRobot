@@ -1,6 +1,6 @@
 import threading
 
-from sqlalchemy import Column, Integer, String, Boolean
+from sqlalchemy import Column, Integer, String, Boolean, BigInteger
 from JisooX.modules.sql import BASE, SESSION
 
 DEF_COUNT = 0
@@ -11,7 +11,7 @@ DEF_OBJ = (None, DEF_COUNT, DEF_LIMIT)
 class FloodControl(BASE):
     __tablename__ = "antiflood"
     chat_id = Column(String(14), primary_key=True)
-    user_id = Column(Integer)
+    user_id = Column(BigInteger)
     count = Column(Integer, default=DEF_COUNT)
     limit = Column(Integer, default=DEF_LIMIT)
     soft_flood = Column(Boolean, default=False)

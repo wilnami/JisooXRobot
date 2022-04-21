@@ -1,6 +1,6 @@
 import threading
 
-from sqlalchemy import Column, Integer, UnicodeText, String, ForeignKey, UniqueConstraint, func
+from sqlalchemy import Column, Integer, UnicodeText, String, ForeignKey, UniqueConstraint, func, BigInteger
 
 from JisooX import dispatcher
 from JisooX.modules.sql import BASE, SESSION
@@ -8,7 +8,7 @@ from JisooX.modules.sql import BASE, SESSION
 
 class Users(BASE):
     __tablename__ = "users"
-    user_id = Column(Integer, primary_key=True)
+    user_id = Column(BigInteger, primary_key=True)
     username = Column(UnicodeText)
 
     def __init__(self, user_id, username=None):
@@ -41,7 +41,7 @@ class ChatMembers(BASE):
                              onupdate="CASCADE",
                              ondelete="CASCADE"),
                   nullable=False)
-    user = Column(Integer,
+    user = Column(BigInteger,
                   ForeignKey("users.user_id",
                              onupdate="CASCADE",
                              ondelete="CASCADE"),

@@ -1,12 +1,12 @@
 import threading
 
-from sqlalchemy import Column, UnicodeText, Integer, String, Boolean
+from sqlalchemy import Column, UnicodeText, Integer, String, Boolean, BigInteger
 
 from JisooX.modules.sql import BASE, SESSION
 
 class GloballyKickedUsers(BASE):
     __tablename__ = "gkicks"
-    user_id = Column(Integer, primary_key=True)
+    user_id = Column(BigInteger, primary_key=True)
     name = Column(UnicodeText, nullable=False)
     times = Column(Integer)
     
